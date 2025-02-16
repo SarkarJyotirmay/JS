@@ -164,19 +164,30 @@ function targetSum(arr, target){
 // console.log(targetSum(prices, 27));
 
 //! Longest Substring Without Repeating Characters:
-let fullStr = "abcab";
+function findLongest(s) {
+  let maxLength = 0;
+  let start = 0;
+  const map = new Map();
 
-function findLongestSub(str){
-    let start = 0, end = 0, n = str.length;
-    let map = new Map();
-    for(let i = 0; i < n; i++){
-        
+  for (let end = 0; end < s.length; end++) {
+    const char = s[end];
+    
+    if (map.has(char) && map.get(char) >= start) {
+      start = map.get(char) + 1;
     }
+    
+    map.set(char, end);
+    maxLength = Math.max(maxLength, end - start + 1);
+  }
 
-    return str.slice(start, end)
+  return maxLength;
 }
 
-console.log(findLongestSub(fullStr));
+// Example usage
+console.log(findLongest("abcababdef"));
+
+
+
 
  
 
