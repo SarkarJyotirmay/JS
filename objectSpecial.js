@@ -62,7 +62,7 @@ const jyotirmay = {
         backEnd: "Java", 
     },
     canDo: ()=>{
-        console.log("Channu Asli achha hai! 🤣");
+        console.log("Channu Asli Chomu hai! 🤣");
     }
 }
 
@@ -72,10 +72,9 @@ clonedJyotirmay.skills.frontEnd = "CSS";
 // console.log("Clonned Jyotirmay - ", clonedJyotirmay);
 // console.log("Original Jyotirmay - ", jyotirmay);
 
-let newObj = {
-    ...jyotirmay,
-    canDo: jyotirmay.canDo.toString(),
-}
+
+const ans = structuredClone(jyotirmay);
+console.log(ans);
 
  
 //! // Look in the console we do not have canDo method
